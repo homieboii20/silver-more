@@ -1,0 +1,31 @@
+{
+  "name": "betna",
+  "version": "0.0.1a",
+  "type": "module",
+  "main": "app.js",
+  "repository": "git@github.com:Korayementality/betna.git",
+  "scripts": {
+    "dev:client": "cd client && yarn start",
+    "start": "node --experimental-specifier-resolution=node server/app.js",
+    "build": "cd client/ && yarn && yarn build",
+    "dev:server": "nodemon --experimental-specifier-resolution=node server/app.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn dev:server\" \"yarn dev:client\"",
+    "deploy": "cd client && yarn && cd ../ && concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "install:all": "yarn install && cd client && yarn install && cd ..",
+    "install:client": "cd client && yarn install && cd .. "
+  },
+  "author": "Ali Korayem",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@hapi/boom": "^9.1.0",
+    "bcrypt": "^5.0.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.10",
+    "nodemon": "^2.0.4"
+  }
+}

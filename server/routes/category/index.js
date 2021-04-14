@@ -1,6 +1,6 @@
 import Router from "express";
-import userValidators from "./validators";
-import { userController } from "../../controllers";
+import categoryValidators from "./validators";
+import { categoryController } from "../../controllers";
 import { handleResponse } from "../../utils/handler";
 const router = Router();
 router.get(
@@ -12,7 +12,6 @@ router.get(
 );
 
 router
-  .post("/signup", userValidators.signupValidator, userController.userSignup)
-  .post("/login", userValidators.loginValidator, userController.userLogin);
+  .post("/create", categoryValidators.createValidator, categoryController.categoryCreate);
 
 export default router;

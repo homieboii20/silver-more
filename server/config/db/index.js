@@ -1,7 +1,7 @@
 //Import the mongoose module
 import mongoose from "mongoose";
 //Set up default mongoose connection
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/betna";
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/silver&more";
 mongoose.Promise = Promise;
 
 mongoose.connect(MONGO_URI, {
